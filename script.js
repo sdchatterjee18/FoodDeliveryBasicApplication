@@ -6,7 +6,7 @@ const foods = [
         weight: "230g",
         price: 5.60,
         calories: 380,
-        image: "gonochi.png",
+        image: "Images/gonochi.png",
         ingredients: "Gnocchi, mushrooms, cream, butter and herbs."
     },
     {
@@ -15,7 +15,7 @@ const foods = [
         weight: "170g",
         price: 3.80,
         calories: 290,
-        image: "pizza.png",
+        image: "Images/pizza.png",
         ingredients: "Raspberries, currants, pastry, cream and sugar."
     },
     {
@@ -24,7 +24,7 @@ const foods = [
         weight: "350ml",
         price: 2.30,
         calories: 160,
-        image: "juice.png",
+        image: "Images/juice.png",
         ingredients: "Freshly squeezed oranges."
     },
     {
@@ -33,7 +33,7 @@ const foods = [
         weight: "230g",
         price: 5.60,
         calories: 380,
-        image: "gonochi.png",
+        image: "Images/gonochi.png",
         ingredients: "Gnocchi, mushrooms, cream, butter and herbs."
     },
     {
@@ -42,7 +42,7 @@ const foods = [
         weight: "170g",
         price: 3.80,
         calories: 290,
-        image: "pizza.png",
+        image: "Images/pizza.png",
         ingredients: "Raspberries, currants, pastry, cream and sugar."
     },
     {
@@ -51,7 +51,7 @@ const foods = [
         weight: "350ml",
         price: 2.30,
         calories: 160,
-        image: "juice.png",
+        image: "Images/juice.png",
         ingredients: "Freshly squeezed oranges."
     }
 ];
