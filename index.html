@@ -1,0 +1,99 @@
+<html lang="en">
+
+<head>
+    <title>Food</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="phone">
+            <div class="screen">
+                <div class="header">
+                    <div class="time">
+                        09:41
+                    </div>
+                    <div class="camera">
+
+                    </div>
+                    <div class="icons">
+                        <i class="fa-solid fa-signal"></i>
+                        <i class="fa-solid fa-wifi"></i>
+                        <i class="fa-solid fa-battery-full"></i>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="cart-header">
+                        <h2>Cart,<span class="item-count"><span id="item-count">0</span> items</span></h2>
+                        <i class="fa-solid fa-xmark clear-cart" onclick="ClearCart()"></i>
+                    </div>
+                    <div class="delivery">
+                        <div class="delivery_option">
+                            <div class="delivery_text">
+                                <span>Standard delivery, 40–60 minutes</span>
+                                <span class="price">Free</span>
+                            </div>
+                            <input type="radio" id="standardDelivery" name="delivery" value="standard" checked
+                                onclick="StanderdDelivery()">
+                        </div>
+                        <div class="delivery_option">
+                            <div class="delivery_text">
+                                <span>Express, 15–25 minutes <i class="fa-solid fa-bolt"></i></span>
+                                <span class="price">$2.00</span>
+                            </div>
+                            <input type="radio" name="delivery" id="expressDelivery" value="express"
+                                onclick="ExpressDelivery()">
+                        </div>
+                    </div>
+                    <div class="food-list" id="food-list">
+                    </div>
+
+                    <div class="cart-bottom">
+                        <div class="promo-code">
+                            <span>Promo code</span>
+                            <input type="text" placeholder="Enter code">
+                        </div>
+                        <div class="confirm-order">
+                            <span class="order-price">$<span id="total-price">0.00</span></span>
+                            <span class="order-text">
+                                Confirm Order
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="home_button_area">
+                    <div class="home_button"></div>
+                </div>
+            </div>
+        </div>
+        <div class="phone">
+            <div class="screen">
+                <div class="header">
+                    <div class="time">
+                        09:41
+                    </div>
+                    <div class="camera">
+
+                    </div>
+                    <div class="icons">
+                        <i class="fa-solid fa-signal"></i>
+                        <i class="fa-solid fa-wifi"></i>
+                        <i class="fa-solid fa-battery-full"></i>
+                    </div>
+                </div>
+                <div class="content">
+
+                </div>
+                <div class="home_button_area">
+                    <div class="home_button"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
