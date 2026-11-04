@@ -116,6 +116,12 @@ function DisplayFoods() {
         quantity.appendChild(quantityNumber);
         quantity.appendChild(plusButton);
 
+        foodImage.onclick = function () {
+            ShowFoodDetails(item.id);
+        }
+        foodName.onclick = function () {
+            ShowFoodDetails(item.id);
+        }
         plusButton.onclick = function () {
             let itemQuantity = document.getElementById("foodItem" + item.id);
             itemQuantity.innerHTML = Number(itemQuantity.innerHTML) + 1;
@@ -141,7 +147,7 @@ function DisplayFoods() {
                 standardDelivery.checked = true;
                 document.getElementById("expressDelivery").disabled = true;
                 standardDelivery.disabled = false;
-
+                totalPrice.innerHTML = "0.00";
             }
         }
     }
@@ -173,5 +179,26 @@ function ClearCart() {
     standardDelivery.checked = true;
     document.getElementById("expressDelivery").disabled = true;
 }
+
+function ShowFoodDetails(id) {
+    let selectedFood = foods.find(function (item) {
+        return item.id === id;
+    });
+    let foodimage1 = document.getElementById("food-image");
+    foodimage1.src = selectedFood.image;
+
+    let foodName1 = document.getElementById("food-name");
+    foodName1.firstChild.textContent = selectedFood.name + ", ";
+
+    let foodWeight1 = document.getElementById("food-weight");
+    foodWeight1.innerHTML = selectedFood.weight;
+
+    let foodDetails1 = document.getElementById("food-description")
+    foodDetails1.innerHTML = selectedFood.ingredients;
+
+    let foodPrice1 = document.getElementById("add-price");
+    foodPrice1.innerHTML = "$" + selectedFood.price;
+}
+
 DisplayFoods();
 document.getElementById("expressDelivery").disabled = true;
