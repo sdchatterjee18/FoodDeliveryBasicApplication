@@ -264,6 +264,9 @@ function DisplayRecomendedFoods() {
         recFood.className = "rec-food";
         recFood.id = "rec-food";
 
+        let recAddButton = document.createElement("button");
+        recAddButton.innerHTML = "+";
+
         let recFoodImage = document.createElement("img");
         recFoodImage.src = item.image;
         recFoodImage.alt = item.name;
@@ -279,6 +282,7 @@ function DisplayRecomendedFoods() {
         orderItems.appendChild(recFood);
 
         recFood.appendChild(recFoodImage);
+        recFood.appendChild(recAddButton);
         recFood.appendChild(recFoodName);
         recFood.appendChild(recFoodPrice);
     }

@@ -376,6 +376,20 @@ body {
     min-width: 75px;
     height: 100%;
     margin-right: 5px;
+    position: relative;
+}
+
+.rec-food button {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    padding: 0;
+    color: #f4a052;
 }
 
 .rec-food img {
