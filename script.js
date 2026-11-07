@@ -6,8 +6,8 @@ const foods = [
         weight: "230g",
         price: 5.60,
         calories: 380,
-        image: "Images/gonochi.png",
-        ingredients: "Gnocchi, mushrooms, cream, butter and herbs."
+        image: "https://th.bing.com/th/id/OIP.eNw2P9NRt4C4EzPfC-ikBwHaHa?w=212&h=212&c=7&r=0&o=7&pid=1.7&rm=3",
+        ingredients: "Gnocchi, mushrooms, cream, butter and herbs.fdgnhncghmvhjmvhjvhjhjfhjm"
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ const foods = [
         weight: "170g",
         price: 3.80,
         calories: 290,
-        image: "Images/pizza.png",
+        image: "https://th.bing.com/th/id/OIP.eBR5pzGsy9big_uBJZy9zwHaHa?w=185&h=182&c=7&r=0&o=7&pid=1.7&rm=3",
         ingredients: "Raspberries, currants, pastry, cream and sugar."
     },
     {
@@ -24,35 +24,92 @@ const foods = [
         weight: "350ml",
         price: 2.30,
         calories: 160,
-        image: "Images/juice.png",
+        image: "https://th.bing.com/th/id/OIP.TdVCM1dRzN6lfAvHRMd80wHaHa?w=177&h=190&c=7&r=0&o=7&pid=1.7&rm=3",
         ingredients: "Freshly squeezed oranges."
     },
     {
         id: 4,
-        name: "Gnocchi with mushroom gravy",
-        weight: "230g",
-        price: 5.60,
-        calories: 380,
-        image: "Images/gonochi.png",
-        ingredients: "Gnocchi, mushrooms, cream, butter and herbs."
+        name: "Paneer Butter Masala",
+        weight: "250g",
+        price: 4.50,
+        calories: 350,
+        image: "https://th.bing.com/th/id/OIP.LRorO9eoX__28SlTrMuizAHaHZ?w=180&h=183&c=7&r=0&o=7&pid=1.7&rm=3",
+        ingredients: "Paneer, tomatoes, butter, fresh cream, onions, spices and herbs."
     },
     {
         id: 5,
-        name: "Wenzel with raspberries and currants",
-        weight: "170g",
-        price: 3.80,
-        calories: 290,
-        image: "Images/pizza.png",
-        ingredients: "Raspberries, currants, pastry, cream and sugar."
+        name: "Chicken Biryani",
+        weight: "300g",
+        price: 5.60,
+        calories: 450,
+        image: "https://th.bing.com/th/id/OIP.q25gNCqxY54AtYP5ndUf_AHaHa?w=191&h=187&c=7&r=0&o=7&pid=1.7&rm=3",
+        ingredients: "Basmati rice, chicken, onions, yogurt, ginger, garlic and aromatic spices."
     },
     {
         id: 6,
-        name: "Freshly squeezed orange juice",
-        weight: "350ml",
-        price: 2.30,
+        name: "Veg Hakka Noodles",
+        weight: "250g",
+        price: 3.50,
+        calories: 320,
+        image: "https://th.bing.com/th/id/OIP.b4w7B5fdlN55zuhvCMlp3wHaGB?w=189&h=181&c=7&r=0&o=7&pid=1.7&rm=3",
+        ingredients: "Noodles, cabbage, carrots, capsicum, spring onions, soy sauce and spices."
+    },
+    {
+        id: 7,
+        name: "Gulab Jamun",
+        weight: "150g",
+        price: 2.00,
+        calories: 280,
+        image: "https://th.bing.com/th/id/OIP.tEPk8MLjMrx3PXKdencl9QHaHa?w=168&h=180&c=7&r=0&o=7&pid=1.7&rm=3",
+        ingredients: "Milk solids, flour, sugar syrup, cardamom and rose water."
+    }
+];
+
+const recFoods = [
+    {
+        id: 1,
+        name: "Blue Lagoon",
+        weight: "300ml",
+        price: 3.50,
+        calories: 180,
+        image: "https://th.bing.com/th?q=Blue+Lagoon+Drink+Recipe&w=120&h=120&c=1&rs=1&qlt=70&r=0&o=7&cb=1&pid=InlineBlock&rm=3&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247",
+        ingredients: "Blue curacao syrup, lemonade, lemon juice and ice."
+    },
+    {
+        id: 2,
+        name: "Mango Blast",
+        weight: "300ml",
+        price: 3.20,
+        calories: 220,
+        image: "https://th.bing.com/th/id/OIP.Mbo406zpgweIPdyoS8A0cwHaFK?w=227&h=180&c=7&r=0&o=7&pid=1.7&rm=3",
+        ingredients: "Fresh mango pulp, milk, honey and ice cream."
+    },
+    {
+        id: 3,
+        name: "Berry Mojito",
+        weight: "300ml",
+        price: 3.80,
         calories: 160,
-        image: "Images/juice.png",
-        ingredients: "Freshly squeezed oranges."
+        image: "https://th.bing.com/th/id/OIP.r2yKtF_Hv-rYOQ44NnrPCAHaJM?w=184&h=228&c=7&r=0&o=7&pid=1.7&rm=3",
+        ingredients: "Mixed berries, mint leaves, lime juice, soda and sugar syrup."
+    },
+    {
+        id: 4,
+        name: "Cold Coffee",
+        weight: "300ml",
+        price: 3.00,
+        calories: 240,
+        image: "https://th.bing.com/th/id/OIP.EagshU02vZQt8j9XMq1FZAHaHa?w=184&h=184&c=7&r=0&o=7&pid=1.7&rm=3",
+        ingredients: "Fresh milk, espresso, sugar, chocolate syrup and ice cream."
+    },
+    {
+        id: 5,
+        name: "Oreo Shake",
+        weight: "300ml",
+        price: 3.60,
+        calories: 320,
+        image: "https://th.bing.com/th/id/OIP.2UFDx6lMZT88DBpuNwYkMAHaHa?w=184&h=184&c=7&r=0&o=7&pid=1.7&rm=3",
+        ingredients: "Oreo cookies, chilled milk, vanilla ice cream and chocolate syrup."
     }
 ];
 
@@ -200,5 +257,47 @@ function ShowFoodDetails(id) {
     foodPrice1.innerHTML = "$" + selectedFood.price;
 }
 
-DisplayFoods();
+function DisplayRecomendedFoods() {
+    let orderItems = document.getElementById("order-items");
+    recFoods.forEach(function (item) {
+        let recFood = document.createElement("Div");
+        recFood.className = "rec-food";
+        recFood.id = "rec-food";
+
+        let recFoodImage = document.createElement("img");
+        recFoodImage.src = item.image;
+        recFoodImage.alt = item.name;
+
+        let recFoodName = document.createElement("p");
+        recFoodName.innerHTML = item.name;
+        recFoodName.className = "rec-food-name"
+
+        let recFoodPrice = document.createElement("p");
+        recFoodPrice.innerHTML = "$" + item.price;
+        recFoodPrice.className = "rec-food-price";
+
+        orderItems.appendChild(recFood);
+
+        recFood.appendChild(recFoodImage);
+        recFood.appendChild(recFoodName);
+        recFood.appendChild(recFoodPrice);
+    }
+
+    )
+}
+function displayFood(foodId) {
+
+    let food = foods.find(item => item.id === foodId);
+
+    if (!food) return;
+
+    document.getElementById("food-image").src = food.image;
+    document.getElementById("food-name").innerText = food.name;
+    document.getElementById("food-weight").innerText = food.weight;
+    document.getElementById("food-description").innerText = food.ingredients;
+    document.getElementById("add-price").innerText = food.price;
+}
+window.onload = function () {
+    DisplayFoods(); DisplayRecomendedFoods(); ShowFoodDetails(1);
+}
 document.getElementById("expressDelivery").disabled = true;

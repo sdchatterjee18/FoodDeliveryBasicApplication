@@ -46,11 +46,12 @@ body {
     height: 92%;
     display: flex;
     flex-direction: column;
+    padding-top: 3px;
 }
 
 .home_button_area {
     display: flex;
-    height: 4%;
+    min-height: 4%;
     justify-content: center;
     align-items: center;
 }
@@ -114,7 +115,7 @@ body {
     align-items: center;
     gap: 5px;
     font-size: 9px;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 .price {
@@ -317,10 +318,10 @@ body {
 -------------------- 
 */
 .image-section {
-    height: 45%;
+    height: 43%;
     width: 100%;
     margin-top: 5px;
-    padding: 10px;
+    padding: 0px 10px;
     box-sizing: border-box;
 }
 
@@ -331,15 +332,16 @@ body {
 }
 
 .details-section {
-    flex: 1;
+    height: 90px;
 }
 
 .details-section h1 {
     margin: 10px 0 0 15px;
     font-family: 'Times New Roman', serif;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: normal;
     color: #111;
+    line-height: 1;
 }
 
 .details-section h1 span {
@@ -350,26 +352,58 @@ body {
 .details-section p {
     margin: 5px 0 0 15px;
     font-size: 14px;
-    font-family: 'Times New Roman', serif;
-    font-size: 14;
+    font-family: Arial, sans-serif;
+    font-size: 11;
 }
 
 .add-order {
     margin: 3px 0 0 15px;
     font-family: 'Times New Roman', serif;
-    font-size: 20px;
+    font-size: 19px;
 }
 
 .order-items {
-    height: 20%;
-    width: 100%;
+    min-height: 22%;
+    width: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     overflow-x: scroll;
+    padding: 0px 0px 0px 10px;
+    scrollbar-width: none;
+}
+
+.rec-food {
+    min-width: 75px;
+    height: 100%;
+    margin-right: 5px;
+}
+
+.rec-food img {
+    width: 100%;
+    height: 62%;
+    border-radius: 8px;
+}
+
+.rec-food-name {
+    font-family: 'Times New Roman', serif;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0;
+    padding-left: 2px;
+}
+
+.rec-food-price {
+    color: #a09e9e;
+    font-family: 'Times New Roman', serif;
+    font-weight: normal;
+    margin: 0;
+    padding-left: 2px;
+    font-size: 9px;
+
 }
 
 .add-items {
-    height: 40px;
+    min-height: 40px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -394,4 +428,6 @@ body {
     border-right: 1px solid black;
     padding-right: 10px;
     border-color: #c0c0c0;
+    font-size: 16px;
+    font-weight: bold;
 }
