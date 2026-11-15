@@ -113,6 +113,8 @@ const recFoods = [
     }
 ];
 
+let selectedFoodId = 1;
+
 function DisplayFoods() {
     let foodList = document.getElementById("food-list");
     foods.forEach(function (item) {
@@ -252,6 +254,7 @@ function ClearCart() {
 }
 
 function ShowFoodDetails(id) {
+    selectedFoodId = id;
     let selectedFood = foods.find(function (item) {
         return item.id === id;
     });
@@ -269,6 +272,9 @@ function ShowFoodDetails(id) {
 
     let foodPrice1 = document.getElementById("add-price");
     foodPrice1.innerHTML = "$" + selectedFood.price;
+
+    let addInCart = document.getElementById("add-in-cart");
+    addInCart.onclick = AddToCart;
 }
 
 function DisplayRecomendedFoods() {
@@ -391,7 +397,40 @@ function AddRecommendedFood(item, recFood, recAddButton) {
     };
 }
 
-window.onload = function () {
-    DisplayFoods(); DisplayRecomendedFoods(); ShowFoodDetails(1);
+function AddToCart() {
+
+    // Find the currently selected food
+    let selectedFood = foods.find(function (item) {
+        return item.id === selectedFoodId;
+    });
+
+    // Get its quantity from the left phone
+    let itemQuantity = document.getElementById("foodItem" + selectedFoodId);
+
+    // Increase quantity
+    itemQuantity.innerHTML = Number(itemQuantity.innerHTML) + 1;
+
+    // Increase total items
+    let totalItems = document.getElementById("item-count");
+    totalItems.innerHTML = Number(totalItems.innerHTML) + 1;
+
+    // Increase total price
+    let totalPrice = document.getElementById("total-price");
+    totalPrice.innerHTML = (
+        Number(totalPrice.innerHTML) + selectedFood.price
+    ).toFixed(2);
+
+    // Enable express delivery
+    document.getElementById("expressDelivery").disabled = false;
 }
+
+window.onload = function () {
+    DisplayFoods();
+    DisplayRecomendedFoods();
+    ShowFoodDetails(1);
+    //document.querySelector(".add-in-cart").onclick = AddToCart;
+    document.getElementById("add-in-cart").onclick = AddToCart;
+}
+// let addInCart = document.getElementById("add-in-cart");
+// addInCart.onclick = AddToCart;
 document.getElementById("expressDelivery").disabled = true;
