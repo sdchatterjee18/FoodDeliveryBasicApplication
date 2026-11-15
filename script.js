@@ -210,10 +210,12 @@ function DisplayFoods() {
     }
     )
 }
+
 function ExpressDelivery() {
     let totalPrice = document.getElementById("total-price");
     totalPrice.innerHTML = (Number(totalPrice.innerHTML) + 2).toFixed(2);
 }
+
 function StanderdDelivery() {
     let totalPrice = document.getElementById("total-price");
     if (totalPrice.innerHTML > 0) {
@@ -235,6 +237,18 @@ function ClearCart() {
     let standardDelivery = document.getElementById("standardDelivery");
     standardDelivery.checked = true;
     document.getElementById("expressDelivery").disabled = true;
+
+    let recommendedFoods = document.querySelectorAll(".rec-food");
+    recFoods.forEach(function (item) {
+        let recommendedFoods = document.querySelectorAll(".rec-food");
+        let recFood = document.getElementById("rec-food" + item.id);
+        let quantityDiv = recFood.querySelector(".rec-quantity");
+        let addButton = recFood.querySelector("button");
+        if (quantityDiv) {
+            quantityDiv.style.display = "none";
+        }
+        addButton.style.display = "block";
+    });
 }
 
 function ShowFoodDetails(id) {
@@ -262,10 +276,19 @@ function DisplayRecomendedFoods() {
     recFoods.forEach(function (item) {
         let recFood = document.createElement("Div");
         recFood.className = "rec-food";
-        recFood.id = "rec-food";
+        recFood.id = "rec-food" + item.id;
 
         let recAddButton = document.createElement("button");
         recAddButton.innerHTML = "+";
+
+        recAddButton.onclick = function () {
+            let totalItems = document.getElementById("item-count");
+            totalItems.innerHTML = Number(totalItems.innerHTML) + 1;
+            document.getElementById("expressDelivery").disabled = false;
+            let totalPrice = document.getElementById("total-price");
+            totalPrice.innerHTML = (Number(totalPrice.innerHTML) + item.price).toFixed(2);
+            AddRecommendedFood(item, recFood, recAddButton);
+        };
 
         let recFoodImage = document.createElement("img");
         recFoodImage.src = item.image;
@@ -289,6 +312,7 @@ function DisplayRecomendedFoods() {
 
     )
 }
+
 function displayFood(foodId) {
 
     let food = foods.find(item => item.id === foodId);
@@ -301,6 +325,72 @@ function displayFood(foodId) {
     document.getElementById("food-description").innerText = food.ingredients;
     document.getElementById("add-price").innerText = food.price;
 }
+
+function AddRecommendedFood(item, recFood, recAddButton) {
+
+    // Hide the add button
+    recAddButton.style.display = "none";
+
+    // Create quantity control div
+    let quantityDiv = document.createElement("div");
+    quantityDiv.className = "rec-quantity";
+
+    // Minus button
+    let minusButton = document.createElement("button");
+    minusButton.innerHTML = "-";
+
+    // Quantity count
+    let quantityCount = document.createElement("span");
+    quantityCount.innerHTML = "1";
+    quantityCount.id = "foodItem" + item.id;
+
+    // Plus button
+    let plusButton = document.createElement("button");
+    plusButton.innerHTML = "+";
+
+    // Append elements
+    quantityDiv.appendChild(minusButton);
+    quantityDiv.appendChild(quantityCount);
+    quantityDiv.appendChild(plusButton);
+
+    recFood.appendChild(quantityDiv);
+
+    // Increase quantity
+    plusButton.onclick = function () {
+        let quantity = Number(quantityCount.innerHTML);
+        quantity++;
+        quantityCount.innerHTML = quantity;
+        let totalItems = document.getElementById("item-count");
+        totalItems.innerHTML = Number(totalItems.innerHTML) + 1;
+        document.getElementById("expressDelivery").disabled = false;
+        let totalPrice = document.getElementById("total-price");
+        totalPrice.innerHTML = (Number(totalPrice.innerHTML) + item.price).toFixed(2);
+    };
+    minusButton.onclick = function () {
+        let quantity = Number(quantityCount.innerHTML);
+        let totalItems = document.getElementById("item-count");
+        let totalPrice = document.getElementById("total-price");
+        totalPrice.innerHTML = (Number(totalPrice.innerHTML) - Number(item.price)).toFixed(2);
+        totalItems.innerHTML = Number(totalItems.innerHTML) - 1;
+        if (quantity === 1) {
+            quantityDiv.style.display = "none";
+            recAddButton.style.display = "block";
+        } else {
+            quantity--;
+            quantityCount.innerHTML = quantity;
+        }
+        if (Number(totalItems.innerHTML) === 0) {
+            totalPrice.innerHTML = "0.00";
+            let standardDelivery = document.getElementById("standardDelivery");
+            let expressDelivery = document.getElementById("expressDelivery");
+            standardDelivery.disabled = false;
+            standardDelivery.checked = true;
+            expressDelivery.checked = false;
+            expressDelivery.disabled = true;
+        }
+    };
+}
+
 window.onload = function () {
     DisplayFoods(); DisplayRecomendedFoods(); ShowFoodDetails(1);
 }

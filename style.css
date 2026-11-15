@@ -387,9 +387,43 @@ body {
     width: 18px;
     border-radius: 50%;
     border: none;
-    background-color: white;
+    background-color: #f4a052;
     padding: 0;
-    color: #f4a052;
+    color: White;
+    cursor: pointer;
+}
+
+
+.rec-quantity {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    height: 17px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #fff0e5;
+    border-radius: 12px;
+}
+
+.rec-quantity button {
+    position: static;
+    height: 18px;
+    width: 18px;
+
+    border: none;
+    background: transparent;
+    color: black;
+
+    padding: 0;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.rec-quantity span {
+    font-size: 11px;
 }
 
 .rec-food img {
